@@ -1,0 +1,1 @@
+<a href="{{ url($crud->route.'/'.$entry->getKey()) }}" class="btn btn-xs btn-default bg-olive"><i class="fa fa-eye"></i> View Agents</a>
