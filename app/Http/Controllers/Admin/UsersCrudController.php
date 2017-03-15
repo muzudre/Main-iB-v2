@@ -50,18 +50,23 @@ class UsersCrudController extends CrudController
                 'phone' => ['name' => 'phone','label' => 'Phone'],
                 'email' => ['name' => 'email','label' => 'Email'],
                 'first_name' => ['name' => 'first_name', 'label' => 'Name']
+                // 'password' => ['name' => 'password', 'label' => 'password']
 
             ]
         );
-
-
-
 
        // $this->crud->addField([
        //     'label' => 'Add Agent id',
        //     'type' => 'text',
        //     'name' => 'agent_id',
        // ]);
+       
+       $this->crud->addField([
+           'label' => 'Add Agent id',
+           'type' => 'text',
+           'name' => 'agent_id',
+       ]);
+
         $this->crud->addField([
            'label' => 'Add First Name',
            'type' => 'text',
@@ -73,6 +78,13 @@ class UsersCrudController extends CrudController
            'type' => 'text',
            'name' => 'last_name',
        ]);
+
+        $this->crud->addField([
+           'label' => 'Add Password',
+           'type' => 'password',
+           'name' => 'password',
+       ]);
+
 
        $this->crud->addField([
            'label' => 'Add Phone',
@@ -86,11 +98,6 @@ class UsersCrudController extends CrudController
            'name' => 'email',
        ]);
 
-       $this->crud->addField([
-           'label' => 'Add Email Address',
-           'type' => 'email',
-           'name' => 'email',
-       ]);
 
 
     }

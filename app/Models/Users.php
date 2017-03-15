@@ -17,7 +17,7 @@ class Users extends Model
     protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    protected $fillable = ['first_name','last_name'];
+    protected $fillable = ['first_name','last_name','agent_id','phone','email','password','','',''];
     // protected $hidden = [];
     // protected $dates = [];
     /*
@@ -25,9 +25,6 @@ class Users extends Model
 	| FUNCTIONS
 	|--------------------------------------------------------------------------
 	*/
-    public function getSlugWithLink() {
-        return '<a href="'.url($this->slug).'" target="_blank">'.$this->slug.'</a>';
-    }
     /*
 	|--------------------------------------------------------------------------
 	| RELATIONS

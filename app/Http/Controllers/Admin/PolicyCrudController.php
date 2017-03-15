@@ -44,6 +44,8 @@ class PolicyCrudController extends CrudController
         ], function($value) { // if the filter is active
             $this->crud->addClause('where', 'policytype_id', $value);
         });
+        // all form and colums auto generated
+        $this->crud->setFromDb();
 
         /*
 		|--------------------------------------------------------------------------
@@ -57,7 +59,7 @@ class PolicyCrudController extends CrudController
 //                'id','policytype_id','company_id','user_id','agent_id','field1','field2','field3','field4','field5','field6','field7','field8'
 //            ]
 //        );
-        $this->crud->setFromDb();
+        
 //        $this->crud->addColumn([
 //            'name' => 'field2',
 //            'label' => 'name2',
@@ -138,53 +140,6 @@ class PolicyCrudController extends CrudController
 //                'type' => 'text',
 //                'name' => 'field8',
 //            ]);
-
-    }
-
-    public function addpolicy(){
-
-
-// validate
-        $rules = array(
-            'company_id' => 'required',
-            'user_id' => 'required',
-            'agent_id' => 'required',
-            'policytype_id' => 'required',
-            'field1' => 'required',
-            'field2' => 'required',
-            'field3' => 'required',
-            'field4' => 'required',
-            'field5' => 'required',
-            'field6' => 'required',
-            'field7' => 'required',
-            'field8' => 'required'
-        );
-
-        $validation = \Validator::make(Input::all(), $rules);
-        // PROCESS TO LOG IN
-        if ($validation->fails()) {
-            return \Redirect::to('policy/create')->withErrors($validation)->withInput(Input::except('password'));
-        }else{
-            // store products
-            $policy = new Policy;
-            $policy->company_id = Input::get('company_id');
-            $policy->user_id = Input::get('user_id');
-            $policy->agent_id = Input::get('agent_id');
-            $policy->policytype_id = Input::get('policytype_id');
-            $policy->field1 = Input::get('field1');
-            $policy->field2 = Input::get('field2');
-            $policy->field3 = Input::get('field3');
-            $policy->field4 = Input::get('field4');
-            $policy->field5 = Input::get('field5');
-            $policy->field6 = Input::get('field6');
-            $policy->field7 = Input::get('field7');
-            $policy->field8 = Input::get('field8');
-
-            $policy->save();
-            //redirect
-            Session::flash('message', 'Successfully created policy');
-            return Redirect::to('policy');
-        }
 
     }
 

@@ -19,7 +19,7 @@ class Policytype extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    // protected $fillable = [];
+     protected $fillable = ['policy_type_id','description','name1','name2','name3','name4','name5','name6','name7','name8'];
     // protected $hidden = [];
     // protected $dates = [];
 

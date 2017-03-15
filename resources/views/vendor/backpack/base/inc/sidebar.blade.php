@@ -17,7 +17,7 @@
         <ul class="sidebar-menu">
           <li class="header">{{ trans('backpack::base.administration') }}</li>
           <!-- ================================================ -->
-          <!-- ==== Recommended place for admin menu items ==== -->
+          <!-- ==== Recommended place for admin menu items ==== --> 5furh
           <!-- ================================================ -->
           
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
@@ -33,11 +33,14 @@
           <!-- <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/elfinder') }}"><i class="fa fa-files-o"></i> <span>File manager</span></a></li> -->
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/backup') }}"><i class="fa fa-hdd-o"></i> <span>Backups</span></a></li>
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}"><i class="fa fa-terminal"></i> <span>Logs</span></a></li>
-          <li><a href="{!! url('/admin/users') !!}"><i class="fa fa-table"></i> <span>Userstable</span></a></li>
+          <li><a href="{!! url('/admin/agents') !!}"><i class="fa fa-table"></i> <span>agents</span></a></li>
+          <li><a href="{!! url('/admin/users') !!}"><i class="fa fa-table"></i> <span>Users</span></a></li>
+
 
           <li class="header">DATABASES</li>
           <li class="treeview">
-            <a href="#"><i class="fa fa-id-card"></i> <span>Agents, Users</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <a href="#"><i class="fa fa-database
+            "></i> <span>Agents, Users</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
               <li><a href="{{ url('admin/agents') }}"><i class="fa fa-database"></i> <span>Agents Table</span></a></li>
               <li><a href="{{ url('admin/users') }}"><i class="fa fa-database"></i> <span>Users Table</span></a></li>
@@ -45,7 +48,7 @@
           </li>
 
           <li class="treeview">
-            <a href="#"><i class="fa fa-group"></i> <span>Policy, Company</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <a href="#"><i class="fa fa-database"></i> <span>Policy, Company</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
               <li><a href="{{ url('admin/policy') }}"><i class="fa fa-database"></i> <span>Policy Table</span></a></li>
               <li><a href="{{ url('admin/policytype') }}"><i class="fa fa-database"></i> <span>Policy Type Table</span></a></li>

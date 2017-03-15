@@ -43,9 +43,11 @@ class AgentsCrudController extends CrudController
                             'name' => 'post_id',
                             'label' => 'Id',
                          ],
-            'agent_name' => [   
-                                'name' => 'agent_name',
-                                'label' => 'Agent Name'
+                                
+
+            'featured_level' => [   
+                                'name' => 'featured_level',
+                                'label' => 'Featured level'
                             ],
             'agency_name' => [   
                                 'name' => 'agency_name',
@@ -75,6 +77,18 @@ class AgentsCrudController extends CrudController
         );
 
         $this->crud->addField([
+           'label' => 'Add Agent ID',
+           'type' => 'text',
+           'name' => 'post_id',
+       ]);
+
+        $this->crud->addField([
+           'label' => 'Add Agent Username',
+           'type' => 'text',
+           'name' => 'username',
+       ]);
+
+        $this->crud->addField([
            'label' => 'Add Agent Name',
            'type' => 'text',
            'name' => 'agent_name',
@@ -84,6 +98,18 @@ class AgentsCrudController extends CrudController
            'label' => 'Add Agency Name',
            'type' => 'text',
            'name' => 'agency_name',
+       ]);
+
+        $this->crud->addField([
+           'label' => 'Add Agent Rating',
+           'type' => 'text',
+           'name' => 'rating_average',
+       ]);
+
+        $this->crud->addField([
+           'label' => 'Add Agent Featured Level',
+           'type' => 'text',
+           'name' => 'featured_level',
        ]);
 
         $this->crud->addField([
@@ -144,6 +170,9 @@ class AgentsCrudController extends CrudController
            'label' => 'Add Agent Rating',
            'type' => 'number',
            'name' => 'rating_average',
+               // optional
+          // 'prefix' => 'users',
+          // 'suffix' => 'prefix'
        ]);
 
         $this->crud->addField([
@@ -155,7 +184,7 @@ class AgentsCrudController extends CrudController
         $this->crud->addField([
            'label' => 'Add Agent Description',
            'type' => 'textarea',
-           'name' => 'escription',
+           'name' => 'description',
        ]);
 
         $this->crud->addField([
@@ -177,38 +206,28 @@ class AgentsCrudController extends CrudController
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Do you agree',
-           'type' => 'text',
-           'name' => 'do_you_agree',
+          'name'    => 'do_you_agree', // the name of the db column
+          'label'   => 'Do you agree', // the input label
+          'type'    => 'radio',
+          'options' => [ // the key will be stored in the db, the value will be shown as label; 
+                              0 => "No. Do not use my information.",
+                              1 => "Yes. I agree."
+                          ],
+          // optional
+          //'inline'      => false, // show the radios all on the same line?
        ]);
 
-        $this->crud->addField([
-           'label' => 'Add Agent Username',
-           'type' => 'text',
-           'name' => 'username',
-       ]);
-
-        $this->crud->addField([
-           'label' => 'Add Agent level',
-           'type' => 'text',
-           'name' => 'featured_level',
-       ]);
+        
     }
 
 
     public function show($id){
         //get the product
         $agents = Agents::find($id);
-
-        $user = DB::table('users')->where('agent_id','=',$id)->orderBy('user_id')->get();
-
-        dd($user);
-
-
-
+        $user = DB::table('users')->where('agent_id','=',$id)->orderBy('id')->get();
 
         // show the view and pass the product to it
-        return \View::make('agent.show',compact('users','agents'));
+        return \View::make('agent.show',compact('user','agents'));
     }
 
 	public function store(StoreRequest $request)

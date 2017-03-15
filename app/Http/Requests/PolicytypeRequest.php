@@ -25,7 +25,17 @@ class PolicytypeRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'policy_type_id' => 'required|min:1|max:255',
+            'description' => 'required|min:5|max:255',
+            'name1' => 'required|min:5|max:255',
+            'name2' => 'required|min:5|max:255',
+            'name3' => 'required|min:5|max:255',
+            'name4' => 'required|min:5|max:255',
+            'name5' => 'required|min:5|max:255',
+            'name6' => 'required|min:5|max:255',
+            'name7' => 'required|min:5|max:255',
+            'name8' => 'required|min:5|max:255'
+
         ];
     }
 

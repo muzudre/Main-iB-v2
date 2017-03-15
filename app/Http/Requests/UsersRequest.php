@@ -25,7 +25,13 @@ class UsersRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'first_name' => 'required|min:5|max:255',
+            'last_name' => 'required|min:5|max:255',
+            'agent_id' => 'required|min:1|max:255',
+            'phone' => 'required|min:5|max:255',
+            'email' => 'required|min:5|max:255'
+
+
         ];
     }
 
