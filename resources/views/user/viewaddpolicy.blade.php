@@ -52,7 +52,7 @@
                         <div class="form-group">
                             <label>Select Policy</label>
                             <select class="form-control" id="policytype" name="policytype_id">
-                                <option></option>
+
                                 @foreach($policytypes as $policytype)
                                     <option name="policytype_id" value="{{ $policytype->id }}">{{ $policytype->id . '-' . $policytype->description }}</option>
                                 @endforeach

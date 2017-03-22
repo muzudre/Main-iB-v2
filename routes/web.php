@@ -13,8 +13,9 @@ Route::get('/', function () {
     return \Redirect::to('admin/dashboard');
 });
 // Admin Interface Routes
-Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
+Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function()
 {
+
   // Backpack\CRUD: Define the resources for the entities you want to CRUD.
     CRUD::resource('policy', 'Admin\PolicyCrudController');
     CRUD::resource('policytype', 'Admin\PolicytypeCrudController');
@@ -31,6 +32,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
     // add policy for user
     Route::post('users/{user}/addpolicy', 'Admin\UsersCrudController@addpolicy');
     Route::post('users/{user}/addpolicy', 'Admin\UsersCrudController@addpolicy');
+
     Route::get('dashboard', function () {
     $agents = \Illuminate\Support\Facades\DB::table('agents')->orderBy('post_id')->count();
     $policy = \Illuminate\Support\Facades\DB::table('policy')->orderBy('id')->count();

@@ -77,97 +77,97 @@ class AgentsCrudController extends CrudController
         );
 
         $this->crud->addField([
-           'label' => 'Add Agent ID',
+           'label' => 'Agent ID',
            'type' => 'text',
            'name' => 'post_id',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Username',
+           'label' => 'Agent Username',
            'type' => 'text',
            'name' => 'username',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Name',
+           'label' => 'Agent Name',
            'type' => 'text',
            'name' => 'agent_name',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agency Name',
+           'label' => 'Agency Name',
            'type' => 'text',
            'name' => 'agency_name',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Rating',
+           'label' => 'Rating',
            'type' => 'text',
            'name' => 'rating_average',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Featured Level',
+           'label' => 'Featured Level',
            'type' => 'text',
            'name' => 'featured_level',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Image',
+           'label' => 'Image',
            'type' => 'url',
            'name' => 'images',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Email',
+           'label' => 'Email',
            'type' => 'email',
            'name' => 'agencyagent_contact_email',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent phone',
+           'label' => 'phone',
            'type' => 'text',
            'name' => 'phone_number',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Adress',
+           'label' => 'Adress',
            'type' => 'text',
            'name' => 'business_street_adress',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agenc State',
+           'label' => 'State',
            'type' => 'text',
            'name' => 'state',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agenc City',
+           'label' => 'City',
            'type' => 'text',
            'name' => 'areacity',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Continent',
+           'label' => 'Continent',
            'type' => 'text',
            'name' => 'continent',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agenc Post Code',
+           'label' => 'Post Code',
            'type' => 'text',
            'name' => 'postcode',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Website',
+           'label' => 'Website',
            'type' => 'text',
            'name' => 'website',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Rating',
+           'label' => 'Rating',
            'type' => 'number',
            'name' => 'rating_average',
                // optional
@@ -176,31 +176,31 @@ class AgentsCrudController extends CrudController
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Languge',
+           'label' => 'Languge',
            'type' => 'text',
            'name' => 'language',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Description',
+           'label' => 'Description',
            'type' => 'textarea',
            'name' => 'description',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Short Description',
+           'label' => 'Short Description',
            'type' => 'textarea',
            'name' => 'short_description',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Insurance Type',
+           'label' => 'Insurance Type',
            'type' => 'text',
            'name' => 'insurance_type',
        ]);
 
         $this->crud->addField([
-           'label' => 'Add Agent Insurance Company',
+           'label' => 'Insurance Company',
            'type' => 'text',
            'name' => 'insurance_companies',
        ]);

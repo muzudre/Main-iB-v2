@@ -4,10 +4,12 @@ namespace App;
 
 
 use Backpack\CRUD\CrudTrait; // <------------------------------- this one
+use Backpack\PermissionManager\app\Models\Role;
 use Spatie\Permission\Traits\HasRoles;// <---------------------- and this one
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -23,7 +25,7 @@ class User extends Authenticatable
     protected $table = 'admin';
     
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'roles' ,'password',
     ];
 
     /**
@@ -44,4 +46,19 @@ class User extends Authenticatable
     {
         $this->notify(new ResetPasswordNotification($token));
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function isUser(){
+        return ($this->hasRole()->count()) ? true : false;
+    }
+
+    public function hasRole($role)
+    {
+        // return in_array($this->roles, $role);
+    }
+
 }
