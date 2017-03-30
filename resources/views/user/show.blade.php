@@ -72,47 +72,6 @@
         {{--row finish--}}
     </div>
 
-    {{--<div class="col-md-6">--}}
-    {{--<!-- Profile Image -->--}}
-        {{--<h3>Agent</h3>--}}
-        {{--<div class="box box-primary">--}}
-            {{--<div class="box-body box-profile">--}}
-                {{--<img class="profile-user-img img-responsive img-rounded" src="{{ $agent_image }}" alt="User profile picture">--}}
-
-                {{--<h3 class="profile-username text-center">Name: {{ $agent_name }}</h3>--}}
-
-                {{--<p class="text-muted text-center">Id: {{ $agent_id }}</p>--}}
-
-                {{--<ul class="list-group list-group-unbordered">--}}
-                    {{--<li class="list-group-item">--}}
-                        {{--<b>Agency Name</b> <a class="pull-right">{{ $agency_name }}</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="list-group-item">--}}
-                        {{--<b>Email</b> <a class="pull-right">{{ $agent_email }}</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="list-group-item">--}}
-                        {{--<b>Phone</b> <a class="pull-right">{{ $agent_phone }}</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="list-group-item">--}}
-                    {{--<b>language</b> <a class="pull-right">{{ $agents->language }}</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="list-group-item">--}}
-                    {{--<b>language</b> <a class="pull-right">{{ $agents->short_description }}</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="list-group-item">--}}
-                    {{--<b>language</b> <a class="pull-right">{{ $agents->description }}</a>--}}
-                    {{--</li>--}}
-                    {{--<li class="list-group-item">--}}
-                    {{--<b>language</b> <a class="pull-right">{{ $agents->phone_number }}</a>--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
-
-                {{--<a href="{{url('/admin/agents/edit')}}" class="btn btn-primary btn-block"><b>Edit</b></a>--}}
-            {{--</div>--}}
-            {{--<!-- /.box-body -->--}}
-        {{--</div>--}}
-        {{--<!-- /.box -->--}}
-    {{--</div>--}}
 </div>
 <div class="row">
     <div class="col-md-12">

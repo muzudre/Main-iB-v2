@@ -12,16 +12,16 @@
 Route::get('/', function () {
     return \Redirect::to('admin/dashboard');
 });
-// Admin Interface Routes
-Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function()
+Route::auth();
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
 {
-
   // Backpack\CRUD: Define the resources for the entities you want to CRUD.
     CRUD::resource('policy', 'Admin\PolicyCrudController');
     CRUD::resource('policytype', 'Admin\PolicytypeCrudController');
     CRUD::resource('agents', 'Admin\AgentsCrudController');
     CRUD::resource('company', 'Admin\CompanyCrudController');
     CRUD::resource('users', 'Admin\UsersCrudController');
+
   // [...] other routes
     /// add policy route
     Route::get('users/{user}/viewaddpolicy', 'Admin\UsersCrudController@viewaddpolicy');
@@ -44,4 +44,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function()
 });
 
 });
+
+
+
 

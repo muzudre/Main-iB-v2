@@ -20,13 +20,12 @@
           <!-- ==== Recommended place for admin menu items ==== -->
           <!-- ================================================ -->
           <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
-
-           @if (Auth::user()->roles == "admin")
+           @if (Auth::user()->id == 1)
             <!-- Users, Roles Permissions --> 
               <li class="treeview">
                 <a href="#"><i class="fa fa-group"></i> <span>Users, Roles, Permissions</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                  <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/user') }}"><i class="fa fa-user"></i> <span>Users</span></a></li>
+                  <li><a href="{{ url('admin/user') }}"><i class="fa fa-user"></i> <span>Users</span></a></li>
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/role') }}"><i class="fa fa-group"></i> <span>Roles</span></a></li>
                   <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/permission') }}"><i class="fa fa-key"></i> <span>Permissions</span></a></li>
                 </ul>
@@ -34,29 +33,36 @@
               {{--<!-- <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/elfinder') }}"><i class="fa fa-files-o"></i> <span>File manager</span></a></li> -->--}}
               <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/backup') }}"><i class="fa fa-hdd-o"></i> <span>Backups</span></a></li>
               <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}"><i class="fa fa-terminal"></i> <span>Logs</span></a></li>
+              <li class="header">Databases</li>
+              <li class="treeview">
+              <a href="#"><i class="fa fa-database"></i> <span>Database</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
 
-              <li class="header">DATABASES</li>
               <li><a href="{{ url('admin/agents') }}"><i class="fa fa-database"></i> <span>Agents</span></a></li>
               <li><a href="{{ url('admin/users') }}"><i class="fa fa-database"></i> <span>Users</span></a></li>
               <li><a href="{{ url('admin/policy') }}"><i class="fa fa-database"></i> <span>Policy</span></a></li>
               <li><a href="{{ url('admin/policytype') }}"><i class="fa fa-database"></i> <span>Policy Type</span></a></li>
               <li><a href="{{ url('admin/company') }}"><i class="fa fa-database"></i> <span>Company</span></a></li>
+                </ul>
+              </li>
           @else
-              {{--<!-- <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/elfinder') }}"><i class="fa fa-files-o"></i> <span>File manager</span></a></li> -->--}}
-              <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/backup') }}"><i class="fa fa-hdd-o"></i> <span>Backups</span></a></li>
-              <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}"><i class="fa fa-terminal"></i> <span>Logs</span></a></li>
+               <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}"><i class="fa fa-terminal"></i> <span>Logs</span></a></li>
+               <li class="header">Add policy for user</li>
+               <li><a href="{{ url('admin/users') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>
 
-              <li class="header">DATABASES</li>
+              <li class="header">Databases</li>
+              <li class="treeview">
+              <a href="#"><i class="fa fa-database"></i> <span>Database</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+
               <li><a href="{{ url('admin/agents') }}"><i class="fa fa-database"></i> <span>Agents</span></a></li>
               <li><a href="{{ url('admin/users') }}"><i class="fa fa-database"></i> <span>Users</span></a></li>
               <li><a href="{{ url('admin/policy') }}"><i class="fa fa-database"></i> <span>Policy</span></a></li>
               <li><a href="{{ url('admin/policytype') }}"><i class="fa fa-database"></i> <span>Policy Type</span></a></li>
               <li><a href="{{ url('admin/company') }}"><i class="fa fa-database"></i> <span>Company</span></a></li>
+                </ul>
+              </li>
           @endif
-
-
-
-
 
           <!-- ======================================= -->
           <li class="header">{{ trans('backpack::base.user') }}</li>

@@ -10,6 +10,12 @@
 	  <h1>
 	    {{ trans('backpack::backup.backup') }}
 	  </h1>
+        @if (Auth::user()->id == 1)
+        @else
+            <h3>
+                {{ "You are not Admin" }}
+            </h3>
+        @endif
 	  <ol class="breadcrumb">
 	    <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/dashboard') }}">Admin</a></li>
 	    <li class="active">{{ trans('backpack::backup.backup') }}</li>
@@ -18,6 +24,7 @@
 @endsection
 
 @section('content')
+    @if (Auth::user()->id == 1)
 <!-- Default box -->
   <div class="box">
     <div class="box-body">
@@ -54,10 +61,12 @@
 
     </div><!-- /.box-body -->
   </div><!-- /.box -->
+    @endif
 
 @endsection
 
 @section('after_scripts')
+    @if (Auth::user()->id == 1)
     <!-- Ladda Buttons (loading buttons) -->
     <script src="{{ asset('vendor/backpack/ladda/spin.js') }}"></script>
     <script src="{{ asset('vendor/backpack/ladda/ladda.js') }}"></script>
@@ -164,4 +173,5 @@
 
   });
 </script>
+    @endif
 @endsection
